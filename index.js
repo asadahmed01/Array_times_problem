@@ -27,3 +27,7 @@ const splitInput = (input) => {
   });
   return result;
 };
+
+//sort the splitted array
+const result = splitInput(input);
+const sortedDates = result.sort((dateA, dateB) => dateA[0] - dateB[0]);
