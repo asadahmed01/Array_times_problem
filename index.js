@@ -31,3 +31,12 @@ const splitInput = (input) => {
 //sort the splitted array
 const result = splitInput(input);
 const sortedDates = result.sort((dateA, dateB) => dateA[0] - dateB[0]);
+
+//convert milliseconds to hours and minutes
+const msToTime = (ms) => {
+  ms = Math.max(...ms);
+  let seconds = (ms / 1000).toFixed(1);
+  let minutes = Math.floor((ms / (1000 * 60)) % 60);
+  let hours = Math.floor((ms / (1000 * 60 * 60)) % 24);
+  return hours + ":" + minutes;
+};
