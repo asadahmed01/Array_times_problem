@@ -40,3 +40,14 @@ const msToTime = (ms) => {
   let hours = Math.floor((ms / (1000 * 60 * 60)) % 24);
   return hours + ":" + minutes;
 };
+
+const calculateDiff = (arr) => {
+  const timeDifferences = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    const diff = arr[i + 1][0] - arr[i][1];
+    timeDifferences.push(diff);
+  }
+  console.log(msToTime(timeDifferences));
+};
+
+calculateDiff(sortedDates);
